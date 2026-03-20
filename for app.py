@@ -1,4 +1,5 @@
-# Mapping dictionary for the cipher
+import streamlit as st
+
 CIPHER_MAP = {
     'a': 'Chinga', 'b': 'Chong', 'c': 'Ching', 'd': 'Cheng',
     'e': 'Chinge', 'f': 'Fing', 'g': 'Guangdong', 'h': 'Hong',
@@ -8,56 +9,39 @@ CIPHER_MAP = {
     'u': 'Underwear', 'v': 'Vietnam', 'w': 'Wongwenxi', 'x': 'Xray',
     'y': 'Yotta', 'z': 'Zebrawoman', ' ': '-'
 }
-
-# Reverse mapping for decoding (Cipher word -> Letter)
 REVERSE_MAP = {v.lower(): k for k, v in CIPHER_MAP.items()}
 
 
 def encrypt_sentence(sentence):
-    """Converts English text into the cipher words."""
-    # Maps each character; if not found, it keeps the original character
     return " ".join(CIPHER_MAP.get(char, char) for char in sentence.lower())
 
 
 def decode_description(encoded_text):
-    """Converts the cipher words back into English."""
     words = encoded_text.split()
-    decoded_result = ""
-    for word in words:
-        clean_word = word.lower()
-        # Appends the character if found, otherwise keeps the word as-is
-        decoded_result += REVERSE_MAP.get(clean_word, word)
-    return decoded_result
+    return "".join(REVERSE_MAP.get(word.lower(), word) for word in words)
 
 
-def main():
-    while True:
-        print("\n" + "=" * 40)
-        print("   Mingish Translator")
-        print("=" * 40)
-        print("1. English -> Mingish")
-        print("2. Mingish -> English")
-        print("3. Exit")
+st.set_page_config(page_title="Cipher Translator", page_icon="🔐")
 
-        choice = input("\nSelect(1-3): ")
+st.title("Mingish Translator")
+st.write("Translate Mingish to English or English to Mingish")
 
-        if choice == '1':
-            text = input("Translate into Mingish: ")
-            result = encrypt_sentence(text)
-            print(f"\n[Encrypted Result]: {result}")
+mode = st.sidebar.selectbox("Functions", ["English -> Mingish", "Mingish -> English"])
 
-        elif choice == '2':
-            text = input("Translate into English (space-separated): ")
-            result = decode_description(text)
-            print(f"\n[Decrypted Result]: {result}")
+user_input = st.text_area("Input your text:", placeholder="input your text here")
 
-        elif choice == '3':
-            print("Exiting the program. Get out")
-            break
-
+if st.button("translate"):
+    if user_input:
+        if mode == "English -> Mingish":
+            result = encrypt_sentence(user_input)
+            st.success("translated to Mingish!")
         else:
-            print("Please enter 1, 2, or 3 u retard.")
+            result = decode_description(user_input)
+            st.success("translated to English!")
 
+        st.code(result, language=None)
+    else:
+        st.warning("check ur input retard.")
 
-if __name__ == "__main__":
-    main()
+st.divider()
+st.caption("Wong wen xi Chinge - Long Osaka Vietnam Chinge - Hong Chinga Suck Chinga Nigga")
