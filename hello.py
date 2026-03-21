@@ -7,7 +7,7 @@ CIPHER_MAP = {
     'm': 'Ming', 'n': 'Nigga', 'o': 'Osaka', 'p': 'Penis',
     'q': 'Qidong', 'r': 'Rice', 's': 'Suck', 't': 'Trachea',
     'u': 'Underwear', 'v': 'Vietnam', 'w': 'Wongwenxi', 'x': 'Xray',
-    'y': 'Yotta', 'z': 'Zebrawoman', ' ': '-'
+    'y': 'Yotta', 'z': 'Zebrawoman', ' ': '-', '-': '*'
 }
 REVERSE_MAP = {v.lower(): k for k, v in CIPHER_MAP.items()}
 
