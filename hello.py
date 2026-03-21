@@ -21,7 +21,7 @@ def decode_description(encoded_text):
     return "".join(REVERSE_MAP.get(word.lower(), word) for word in words)
 
 
-st.set_page_config(page_title="Mingish Translator", page_icon="🔐")
+st.set_page_config(page_title="Mingish Translator", page_icon="🇨🇳")
 
 st.title("Mingish Translator")
 st.write("Translate Mingish to English or English to Mingish")
@@ -39,7 +39,7 @@ if st.button("translate"):
             result = decode_description(user_input)
             st.success("translated to English!")
 
-        st.code(result, language=None)
+        st.text_area("Output:", value=result, height=400, disabled=True)
     else:
         st.warning("check ur input retard.")
 
