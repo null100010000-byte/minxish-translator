@@ -21,7 +21,7 @@ def decode_description(encoded_text):
     return "".join(REVERSE_MAP.get(word.lower(), word) for word in words)
 
 
-st.set_page_config(page_title="Cipher Translator", page_icon="🔐")
+st.set_page_config(page_title="Mingish Translator", page_icon="🔐")
 
 st.title("Mingish Translator")
 st.write("Translate Mingish to English or English to Mingish")
