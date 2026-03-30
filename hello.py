@@ -1,12 +1,12 @@
 import streamlit as st
 
 CIPHER_MAP = {
-    'a': 'Chinga', 'b': 'Chong', 'c': 'Ching', 'd': 'Cheng',
+    'a': 'Allah', 'b': 'Chong', 'c': 'Ching', 'd': 'Cheng',
     'e': 'Chinge', 'f': 'Fing', 'g': 'Guangdong', 'h': 'Hong',
     'i': 'Yi', 'j': 'Jiang', 'k': 'Kong', 'l': 'Long',
     'm': 'Ming', 'n': 'Nigga', 'o': 'Osaka', 'p': 'Penis',
     'q': 'Qidong', 'r': 'Rice', 's': 'Suck', 't': 'Trachea',
-    'u': 'Underwear', 'v': 'Vietnam', 'w': 'Wongwenxi', 'x': 'Xray',
+    'u': 'Underwear', 'v': 'Vietnam', 'w': 'Wongwenxi', 'x': 'Xvideos',
     'y': 'Yotta', 'z': 'Zebrawoman', ' ': '-', '-': '*'
 }
 REVERSE_MAP = {v.lower(): k for k, v in CIPHER_MAP.items()}
