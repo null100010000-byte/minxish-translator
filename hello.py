@@ -44,4 +44,4 @@ if st.button("translate"):
         st.warning("check ur input retard.")
 
 st.divider()
-st.caption("Wongwenxi Chinge - Long Osaka Vietnam Chinge - Hong Chinga Suck Chinga Nigga")
+st.caption("Wongwenxi Chinge - Long Osaka Vietnam Chinge - Hong Allah Suck Allah Nigga")
